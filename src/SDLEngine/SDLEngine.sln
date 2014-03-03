@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL1st", "SDL1st\SDL1st.vcxproj", "{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDLEngine", "SDLEngine\SDLEngine.vcxproj", "{AC4C0EBC-1E84-4702-984E-3A125D019BC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Debug|Win32.Build.0 = Debug|Win32
 		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Release|Win32.ActiveCfg = Release|Win32
 		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Release|Win32.Build.0 = Release|Win32
+		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Debug|Win32.Build.0 = Debug|Win32
+		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Release|Win32.ActiveCfg = Release|Win32
+		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
