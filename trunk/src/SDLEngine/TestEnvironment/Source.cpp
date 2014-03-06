@@ -11,4 +11,6 @@ int main(int argc, char* argv[])
 	SDLEngine::GetInstance()->Start();
 
 	delete comp;
+
+	return 0;
 }

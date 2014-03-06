@@ -38,7 +38,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Developments\Projects\bart-sdl-engine-h14\dependencies\SDL2_image-2.0.0\include;C:\Developments\Projects\bart-sdl-engine-h14\dependencies\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Developments\Projects\bart-sdl-engine-h14\dependencies\SDL2_image-2.0.0\lib\x86;C:\Developments\Projects\bart-sdl-engine-h14\dependencies\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -66,12 +69,14 @@
   <ItemGroup>
     <ClCompile Include="SDLComponent.cpp" />
     <ClCompile Include="SDLEngine.cpp" />
+    <ClCompile Include="SDLRenderer.cpp" />
     <ClCompile Include="SDLSprite.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDLComponent.h" />
     <ClInclude Include="SDLEngine.h" />
+    <ClInclude Include="SDLRenderer.h" />
     <ClInclude Include="SDLSprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

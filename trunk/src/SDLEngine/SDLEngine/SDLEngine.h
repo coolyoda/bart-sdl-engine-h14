@@ -1,7 +1,13 @@
 #pragma once
 
+#include <stdexcept>
+#include <string>
+
+#include "SDL.h"
+#include "SDL_image.h"
+
 #include "SDLComponent.h"
-#include <Windows.h>
+#include "SDLRenderer.h"
 
 class SDLEngine
 {
@@ -29,10 +35,17 @@ public:
 	void Start();
 
 private:
+	static const int SCREEN_WIDTH = 640;
+	static const int SCREEN_HEIGHT = 480;
+
 	bool isInitialized;
+
 	void Run();
 	void Update();
 	void Draw();
 	void Stop();
+
+	SDLRenderer* renderer;
+	SDL_Window* window;
 };
 
