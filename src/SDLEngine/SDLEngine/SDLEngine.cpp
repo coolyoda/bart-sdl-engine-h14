@@ -53,6 +53,8 @@ void SDLEngine::Run()
 
 	while (isRunning)
 	{
+		SDLInput::GetInstance()->Poll();
+
 		while (SDL_PollEvent(&e))
 		{
 			switch (e.type)

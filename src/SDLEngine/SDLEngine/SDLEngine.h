@@ -8,6 +8,7 @@
 
 #include "SDLComponent.h"
 #include "SDLRenderer.h"
+#include "SDLInput.h"
 
 class SDLEngine
 {
@@ -32,20 +33,26 @@ private:
 	SDLEngine& operator= (const SDLEngine& e);
 #pragma endregion
 public:
+	// Get
+	SDL_Renderer* GetRenderer(){ return renderer->GetRenderer(); }
+
+	// Methodes
 	void Start();
 
 private:
+	// statics
 	static const int SCREEN_WIDTH = 640;
 	static const int SCREEN_HEIGHT = 480;
 
+	// Variables
 	bool isInitialized;
+	SDLRenderer* renderer;
+	SDL_Window* window;
 
+	// Méthodes
 	void Run();
 	void Update();
 	void Draw();
 	void Stop();
-
-	SDLRenderer* renderer;
-	SDL_Window* window;
 };
 

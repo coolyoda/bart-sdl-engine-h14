@@ -11,24 +11,25 @@ SDLComponent::SDLComponent()
 
 SDLComponent::~SDLComponent()
 {
+
 }
 
 void SDLComponent::Start()
 {
-	cout << "Component Start" << endl;
+	//cout << "Component Start" << endl;
 }
 
 void SDLComponent::Update()
 {
-	cout << "Component Update" << endl;
+	//cout << "Component Update" << endl;
 }
 
 void SDLComponent::Draw()
 {
-	cout << "Component Draw" << endl;
+	//cout << "Component Draw" << endl;
 }
 
 void SDLComponent::Stop()
 {
-	cout << "Component Stop" << endl;
+	//cout << "Component Stop" << endl;
 }
