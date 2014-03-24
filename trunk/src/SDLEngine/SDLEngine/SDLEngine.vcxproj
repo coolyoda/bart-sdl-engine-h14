@@ -69,14 +69,18 @@
   <ItemGroup>
     <ClCompile Include="SDLComponent.cpp" />
     <ClCompile Include="SDLEngine.cpp" />
+    <ClCompile Include="SDLInput.cpp" />
     <ClCompile Include="SDLRenderer.cpp" />
+    <ClCompile Include="SDLResources.cpp" />
     <ClCompile Include="SDLSprite.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDLComponent.h" />
     <ClInclude Include="SDLEngine.h" />
+    <ClInclude Include="SDLInput.h" />
     <ClInclude Include="SDLRenderer.h" />
+    <ClInclude Include="SDLResources.h" />
     <ClInclude Include="SDLSprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

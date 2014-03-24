@@ -6,7 +6,6 @@ class SDLRenderer
 {
 public:
 	// Ctor / Dtor
-	
 	SDLRenderer::SDLRenderer(SDL_Window* win);
 	~SDLRenderer();
 
