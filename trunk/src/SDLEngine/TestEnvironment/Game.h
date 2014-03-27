@@ -1,5 +1,8 @@
 #pragma once
-#include "SDLComponent.h"
+#include <iostream>
+#include "SDLInput.h"
+#include "SDLSprite.h"
+
 class Game :
 	public SDLComponent
 {
@@ -8,5 +11,8 @@ public:
 	~Game();
 
 	void Update();
+
+private:
+	SDLSprite* texFireFox;
 };
 

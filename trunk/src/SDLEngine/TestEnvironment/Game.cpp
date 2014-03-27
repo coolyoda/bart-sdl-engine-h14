@@ -1,14 +1,13 @@
 #include "Game.h"
-#include "SDLInput.h"
-
-#include <iostream>
 
 Game::Game()
 {
+	texFireFox = new SDLSprite("firefox.png");
 }
 
 Game::~Game()
 {
+	delete texFireFox;
 }
 
 void Game::Update()
