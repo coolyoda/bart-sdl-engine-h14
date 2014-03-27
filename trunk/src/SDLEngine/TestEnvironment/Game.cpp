@@ -3,6 +3,7 @@
 Game::Game()
 {
 	texFireFox = new SDLSprite("firefox.png");
+	texFireFox->SetPosition(100, 100);
 }
 
 Game::~Game()
