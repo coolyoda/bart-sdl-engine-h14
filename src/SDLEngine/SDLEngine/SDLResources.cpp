@@ -9,13 +9,12 @@ SDLResources::SDLResources()
 
 SDLResources::~SDLResources()
 {
-	std::map<std::string, SDL_Texture*>::iterator iter = loadedTextures.begin();
+	auto iter = loadedTextures.begin();
 	while (iter != loadedTextures.end())
 	{
 		SDL_DestroyTexture( iter->second );
 		iter++;
 	}
-
 	loadedTextures.clear();
 }
 
@@ -34,7 +33,7 @@ SDL_Texture* SDLResources::LoadImage(std::string file, SDL_Renderer* renderer)
 	loadedImage = IMG_LoadTexture(renderer, file.c_str());
 	if (loadedImage == nullptr)
 	{
-		throw std::runtime_error("Failed to load image: " + file + IMG_GetError());
+		std::cout << "Failed to load image: " + file + IMG_GetError();
 	}
 	return loadedImage;
 }
