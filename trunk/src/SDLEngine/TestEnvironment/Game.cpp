@@ -11,13 +11,33 @@ Game::~Game()
 	delete texFireFox;
 }
 
-void Game::Update()
+void Game::Notify(const InputEvent& event)
 {
-	if (SDLInput::GetInstance()->IsHeld(SDL_SCANCODE_RETURN)) {
-		std::cout << "Held" << std::endl;
+	// detect key pressed
+	if (event.is_keyboard_key_pressed())
+	{
+		// filter the pressed key code
+		if (event.get_keyboard_key() == InputEvent::KEY_RETURN) {
+			std::cout << "Return Key Pressed" << std::endl;
+			return;
+		}
 	}
 
-	if (SDLInput::GetInstance()->IsHeld(SDL_SCANCODE_RETURN)) {
-		std::cout << "Down" << std::endl;
+	// detect key released
+	if (event.is_keyboard_key_released())
+	{
+		// filter the released key code
+		if (event.get_keyboard_key() == InputEvent::KEY_RETURN) {
+			std::cout << "Return Key Released" << std::endl;
+			return;
+		}
+	}
+}
+
+void Game::Update()
+{
+	// continuous keyboard check
+	if (InputEvent::is_key_down(InputEvent::KEY_RETURN)) {
+		std::cout << "Return Key Held" << std::endl;
 	}
 }

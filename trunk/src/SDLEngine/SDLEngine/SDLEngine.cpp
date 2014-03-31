@@ -5,11 +5,13 @@ SDLEngine* SDLEngine::instance = nullptr;
 SDLEngine::SDLEngine()
 :isInitialized(false)
 {
+	// initialize SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING))
 	{
 		std::cout << SDL_GetError() << std::endl;
 	}
 
+	// window
 	window = SDL_CreateWindow("Hello World"
 		, SDL_WINDOWPOS_CENTERED
 		, SDL_WINDOWPOS_CENTERED
@@ -21,7 +23,11 @@ SDLEngine::SDLEngine()
 		std::cout << SDL_GetError() << std::endl;
 	}
 
+	// video
 	renderer = new SDLRenderer(window);
+
+	// input
+	InputEvent::initialize();
 }
 
 SDLEngine::~SDLEngine()
@@ -48,36 +54,34 @@ void SDLEngine::Start()
 
 void SDLEngine::Run()
 {
-	SDL_Event e;
 	bool isRunning = true;
-
 	while (isRunning)
 	{
-		SDLInput::GetInstance()->Poll();
-
-		while (SDL_PollEvent(&e))
+		InputEvent* event = InputEvent::get_event();
+		if (event != NULL)
 		{
-			switch (e.type)
+			// we have detected a new event
+			if (event->is_window_closing())
 			{
-			case SDL_QUIT:
 				isRunning = false;
-				break;
-			case SDL_KEYDOWN:
-				switch (e.key.keysym.sym)
-				{
-				case SDLK_ESCAPE:
-					isRunning = false;
-					break;
-				default:
-					break;
-				}
-			default:
-				break;
 			}
+
+			// broadcast event to all components
+			for (auto iter = SDLComponent::allComponents.begin();
+				iter != SDLComponent::allComponents.end();
+				iter++)
+			{
+				(*iter)->Notify(*event);
+			}
+
+			// clean event
+			delete event;
 		}
+
 		Update();
 		Draw();
 	}
+
 	Stop();
 }
 
