@@ -19,6 +19,11 @@ void SDLComponent::Start()
 	//cout << "Component Start" << endl;
 }
 
+void SDLComponent::Notify(const InputEvent& event)
+{
+	//cout << "Component Notify" << endl;
+}
+
 void SDLComponent::Update()
 {
 	//cout << "Component Update" << endl;

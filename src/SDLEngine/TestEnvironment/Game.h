@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "SDLInput.h"
+#include "InputEvent.h"
 #include "SDLSprite.h"
 
 class Game :
@@ -10,6 +10,7 @@ public:
 	Game();
 	~Game();
 
+	void Notify(const InputEvent& event);
 	void Update();
 
 private:

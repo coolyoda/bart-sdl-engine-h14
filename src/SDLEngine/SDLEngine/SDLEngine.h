@@ -8,7 +8,7 @@
 
 #include "SDLComponent.h"
 #include "SDLRenderer.h"
-#include "SDLInput.h"
+#include "InputEvent.h"
 
 class SDLEngine
 {

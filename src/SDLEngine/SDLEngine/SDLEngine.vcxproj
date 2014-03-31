@@ -76,7 +76,7 @@
   <ItemGroup>
     <ClCompile Include="SDLComponent.cpp" />
     <ClCompile Include="SDLEngine.cpp" />
-    <ClCompile Include="SDLInput.cpp" />
+    <ClCompile Include="InputEvent.cpp" />
     <ClCompile Include="SDLRenderer.cpp" />
     <ClCompile Include="SDLResources.cpp" />
     <ClCompile Include="SDLSprite.cpp" />
@@ -85,7 +85,7 @@
   <ItemGroup>
     <ClInclude Include="SDLComponent.h" />
     <ClInclude Include="SDLEngine.h" />
-    <ClInclude Include="SDLInput.h" />
+    <ClInclude Include="InputEvent.h" />
     <ClInclude Include="SDLRenderer.h" />
     <ClInclude Include="SDLResources.h" />
     <ClInclude Include="SDLSprite.h" />
