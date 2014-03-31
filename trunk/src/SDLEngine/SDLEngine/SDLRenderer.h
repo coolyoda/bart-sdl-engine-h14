@@ -28,5 +28,5 @@ public:
 private:
 	SDLRenderer();
 	int width, height;
-	SDL_Renderer* ren = nullptr;
+	SDL_Renderer* ren;
 };

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "SDLEngine.h"
 
+#include "SDL.h"
+
 using namespace std;
 
 class Animal
