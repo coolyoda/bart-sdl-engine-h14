@@ -8,7 +8,15 @@ SDLSprite::SDLSprite()
 {
 }
 
-SDLSprite::SDLSprite(std::string fileName): SDLSprite(fileName, 0, 0){ }
+SDLSprite::SDLSprite(std::string fileName)
+	: SDLComponent()
+	, tex(nullptr)
+	, x(0)
+	, y(0)
+{
+	tex = SDLResources::GetInstance()->GetTexture(fileName);
+}
+
 SDLSprite::SDLSprite(std::string fileName, int x, int y)
 	: SDLComponent()
 	, tex(nullptr)
