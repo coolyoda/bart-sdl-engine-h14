@@ -1,45 +1,65 @@
 #include "SDLSprite.h"
 
 SDLSprite::SDLSprite() 
-	: SDLComponent()
+	: SDLCollider()
 	, tex(nullptr)
-	, x(0)
-	, y(0)
 {
 }
 
 SDLSprite::SDLSprite(std::string fileName)
-	: SDLComponent()
+	: SDLCollider()
 	, tex(nullptr)
-	, x(0)
-	, y(0)
 {
 	tex = SDLResources::GetInstance()->GetTexture(fileName);
 }
 
-SDLSprite::SDLSprite(std::string fileName, int x, int y)
-	: SDLComponent()
+SDLSprite::SDLSprite(std::string fileName, int x, int y, int w, int h)
+	: SDLCollider()
 	, tex(nullptr)
-	, x(x)
-	, y(y)
 {
 	tex = SDLResources::GetInstance()->GetTexture(fileName);
+
+	SDL_Rect rect;
+	rect.x = x;
+	rect.y = y;
+	rect.w = w;
+	rect.h = h;
+
+	SetRect(rect);
+}
+
+SDLSprite::SDLSprite(std::string fileName, const SDL_Rect& rect)
+	: SDLCollider()
+	, tex(nullptr)
+{
+	tex = SDLResources::GetInstance()->GetTexture(fileName);
+	SetRect(rect);
 }
 
 SDLSprite::SDLSprite(SDL_Texture* tex)
-	: SDLComponent()
+	: SDLCollider()
 	, tex(tex)
-	, x(0)
-	, y(0)
 {
 }
 
-SDLSprite::SDLSprite(SDL_Texture* tex, int x, int y)
-: SDLComponent()
-, tex(tex)
-, x(x)
-, y(y)
+SDLSprite::SDLSprite(SDL_Texture* tex, int x, int y, int w, int h)
+	: SDLCollider()
+	, tex(tex)
 {
+	SDL_Rect rect;
+	rect.x = x;
+	rect.y = y;
+	rect.w = w;
+	rect.h = h;
+
+	SetRect(rect);
+}
+
+SDLSprite::SDLSprite(SDL_Texture* tex, const SDL_Rect& rect)
+	: SDLCollider()
+	, tex(tex)
+{
+	SetRect(rect);
 }
 
 SDLSprite::~SDLSprite()
@@ -52,22 +72,23 @@ void SDLSprite::Start()
 
 void SDLSprite::Update()
 {
+	if (body != nullptr)
+	{
+		rect.x = (int) body->GetPosition().x;
+		rect.y = (int) body->GetPosition().y;
+	}
 }
 
 void SDLSprite::Draw()
 {
-	ApplySurface(this->x, this->y, tex, SDLEngine::GetInstance()->GetRenderer());
+	ApplySurface(tex, SDLEngine::GetInstance()->GetRenderer());
 }
 
 void SDLSprite::Stop()
 {
 }
 
-void SDLSprite::ApplySurface(int x, int y, SDL_Texture* texture, SDL_Renderer* renderer)
+void SDLSprite::ApplySurface(SDL_Texture* texture, SDL_Renderer* renderer)
 {
-	SDL_Rect rect;
-	rect.x = x;
-	rect.y = y;
-	SDL_QueryTexture(texture, 0, 0, &rect.w, &rect.h);
 	SDL_RenderCopy(renderer, texture, 0, &rect);
 }

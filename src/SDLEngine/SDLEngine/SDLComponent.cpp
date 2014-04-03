@@ -7,11 +7,14 @@ using namespace std;
 SDLComponent::SDLComponent()
 {
 	allComponents.push_back(this);
+	rect.x = 0;
+	rect.y = 0;
+	rect.w = 0;
+	rect.h = 0;
 }
 
 SDLComponent::~SDLComponent()
 {
-
 }
 
 void SDLComponent::Start()

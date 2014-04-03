@@ -48,7 +48,6 @@ void SDLEngine::Start()
 	}
 
 	isInitialized = true;
-
 	Run();
 }
 
@@ -93,6 +92,9 @@ void SDLEngine::Update()
 	{
 		(*iter)->Update();
 	}
+
+	// step current world
+	SDLPhysics::GetInstance()->Step();
 }
 
 void SDLEngine::Draw()
@@ -118,5 +120,7 @@ void SDLEngine::Stop()
 		(*iter)->Stop();
 	}
 
+	SDLResources::Kill();
+	SDLPhysics::Kill();
 	Kill();
 }

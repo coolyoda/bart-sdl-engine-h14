@@ -2,8 +2,8 @@
 
 Game::Game()
 {
-	texFireFox = new SDLSprite("firefox.png");
-	texFireFox->SetPosition(100, 100);
+	texFireFox = new SDLSprite("firefox.png", 0, 0, 100, 100);
+	texFireFox->CreateCollider(SDLCollider::SQUARE_COLLIDER, 1.f);
 }
 
 Game::~Game()
