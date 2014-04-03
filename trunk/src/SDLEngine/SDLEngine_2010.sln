@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL1st", "SDL1st\SDL1st.vcxproj", "{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDLEngine", "SDLEngine\SDLEngine.vcxproj", "{AC4C0EBC-1E84-4702-984E-3A125D019BC1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestEnvironment", "TestEnvironment\TestEnvironment.vcxproj", "{F67B16CC-0949-48E9-B3F0-756623079D3F}"
@@ -15,10 +13,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Debug|Win32.Build.0 = Debug|Win32
-		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Release|Win32.ActiveCfg = Release|Win32
-		{C2F1E923-1D4A-4060-8D6D-73DDB78186F9}.Release|Win32.Build.0 = Release|Win32
 		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Debug|Win32.Build.0 = Debug|Win32
 		{AC4C0EBC-1E84-4702-984E-3A125D019BC1}.Release|Win32.ActiveCfg = Release|Win32

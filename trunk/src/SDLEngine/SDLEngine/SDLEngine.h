@@ -8,6 +8,8 @@
 
 #include "SDLComponent.h"
 #include "SDLRenderer.h"
+#include "SDLResources.h"
+#include "SDLPhysics.h"
 #include "InputEvent.h"
 
 class SDLEngine
@@ -20,11 +22,13 @@ public:
 			instance = new SDLEngine();
 		return instance;
 	}
+
 	static void Kill()
 	{
 		delete instance;
 		instance = nullptr;
 	}
+
 private:
 	static SDLEngine* instance;
 	SDLEngine();
