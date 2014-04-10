@@ -2,6 +2,9 @@
 
 Game::Game()
 {
+	Engine::GetInstance()->SetWindowTitle("Test Environment");
+	Engine::GetInstance()->SetWindowSize(320, 240);
+
 	image = new Sprite("firefox.png", 0, 0);
 	image->CreateCollider(Collider::SQUARE_COLLIDER, 1.0f);
 	image->SetW(100);
