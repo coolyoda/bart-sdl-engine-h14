@@ -60,12 +60,13 @@ void Engine::Start()
 void Engine::Run()
 {
 	Timer clock;
-	clock.Start();
-
 	bool isRunning = true;
 	unsigned int t = 0;
 
-	while (isRunning) {
+	clock.Start();
+
+	while (isRunning)
+	{
 		InputEvent* event = InputEvent::get_event();
 		if (event != NULL)
 		{
@@ -84,7 +85,9 @@ void Engine::Run()
 			delete event;
 		}
 
-		if (clock.Ticks()>DEFAULT_TIMESTEP) {
+		if (clock.Ticks() > DEFAULT_TIMESTEP)
+		{
+			// fixed timestep
 			clock.Restart();
 			Update(t++);
 		}
