@@ -51,6 +51,10 @@ class Engine
 			SDL_SetWindowTitle(window, (StringConcat() << TITLE_PREFIX << title).c_str());
 		}
 
+		void SetWindowSize(int w, int h) {
+			SDL_SetWindowSize(window, w, h);
+		}
+
 		SDL_Renderer* GetRenderer() {
 			return renderer->GetRenderer();
 		}
