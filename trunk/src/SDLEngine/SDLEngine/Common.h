@@ -9,6 +9,10 @@
 #define TITLE_PREFIX "Engine - "
 #endif
 
+#ifndef DEFAULT_TIMESTEP
+#define DEFAULT_TIMESTEP 10
+#endif
+
 #ifndef DEFAULT_WIN_W
 #define DEFAULT_WIN_W 800
 #endif
@@ -26,6 +30,7 @@
 
 // UTL includes
 #include "StringConcat.h"
+#include "Timer.h"
 
 // SDL includes
 #include "SDL.h"

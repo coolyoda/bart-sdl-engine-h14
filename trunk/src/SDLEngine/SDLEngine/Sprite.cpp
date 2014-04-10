@@ -11,6 +11,13 @@ Sprite::Sprite(std::string fileName)
 	, tex(NULL)
 {
 	tex = Resources::GetInstance()->GetTexture(fileName);
+
+	SDL_Rect rect;
+	rect.x = 0;
+	rect.y = 0;
+
+	SDL_QueryTexture(tex, 0, 0, &rect.w, &rect.h);
+	SetRect(rect);
 }
 
 Sprite::Sprite(std::string fileName, int x, int y)
@@ -54,6 +61,12 @@ Sprite::Sprite(SDL_Texture* tex)
 	: Collider()
 	, tex(tex)
 {
+	SDL_Rect rect;
+	rect.x = 0;
+	rect.y = 0;
+
+	SDL_QueryTexture(tex, 0, 0, &rect.w, &rect.h);
+	SetRect(rect);
 }
 
 Sprite::Sprite(SDL_Texture* tex, int x, int y)
@@ -96,7 +109,7 @@ void Sprite::Start()
 {
 }
 
-void Sprite::Update()
+void Sprite::Update(unsigned int t)
 {
 	if (body != nullptr)
 	{

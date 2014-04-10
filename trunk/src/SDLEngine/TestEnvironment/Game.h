@@ -18,7 +18,7 @@ class Game: public Component
 		~Game();
 		
 		void Notify(const InputEvent& event);
-		void Update();
+		void Update(unsigned int t);
 
 	private:
 		Sprite* image;

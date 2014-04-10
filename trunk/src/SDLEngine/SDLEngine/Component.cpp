@@ -33,7 +33,7 @@ void Component::Notify(const InputEvent& event)
 {
 }
 
-void Component::Update()
+void Component::Update(unsigned int t)
 {
 }
 

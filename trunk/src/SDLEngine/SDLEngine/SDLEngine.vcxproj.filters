@@ -57,6 +57,9 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Fichiers sources\Components\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collider.h">
@@ -87,6 +90,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="StringConcat.h">
+      <Filter>Fichiers d%27en-tête\Components\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
       <Filter>Fichiers d%27en-tête\Components\Utility</Filter>
     </ClInclude>
   </ItemGroup>
