@@ -65,7 +65,7 @@ class Engine
 
 		// Services
 		void Run();
-		void Update();
+		void Update(unsigned int t);
 		void Draw();
 		void Stop();
 };

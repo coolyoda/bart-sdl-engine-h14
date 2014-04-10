@@ -20,7 +20,7 @@ class Component
 
 		virtual void Start();
 		virtual void Notify(const InputEvent& event);
-		virtual void Update();
+		virtual void Update(unsigned int t);
 		virtual void Draw();
 		virtual void Stop();
 	

@@ -28,7 +28,7 @@ class Sprite: public Collider
 		virtual ~Sprite();
 
 		void Start();
-		void Update();
+		void Update(unsigned int t);
 		void Draw();
 		void Stop();
 

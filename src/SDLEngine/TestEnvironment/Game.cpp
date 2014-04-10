@@ -40,7 +40,7 @@ void Game::Notify(const InputEvent& event)
 	}
 }
 
-void Game::Update()
+void Game::Update(unsigned int t)
 {
 	// continuous keyboard check
 	if (InputEvent::is_key_down(InputEvent::KEY_RETURN)) {

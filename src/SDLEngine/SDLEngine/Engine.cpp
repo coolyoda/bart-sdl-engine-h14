@@ -59,9 +59,13 @@ void Engine::Start()
 
 void Engine::Run()
 {
+	Timer clock;
+	clock.Start();
+
 	bool isRunning = true;
-	while (isRunning)
-	{
+	unsigned int t = 0;
+
+	while (isRunning) {
 		InputEvent* event = InputEvent::get_event();
 		if (event != NULL)
 		{
@@ -80,17 +84,21 @@ void Engine::Run()
 			delete event;
 		}
 
-		Update();
+		if (clock.Ticks()>DEFAULT_TIMESTEP) {
+			clock.Restart();
+			Update(t++);
+		}
+
 		Draw();
 	}
 
 	Stop();
 }
 
-void Engine::Update()
+void Engine::Update(unsigned int t)
 {
 	for (unsigned int i = 0; i < Component::allComponents.size(); i++) {
-		Component::allComponents[i]->Update();
+		Component::allComponents[i]->Update(t);
 	}
 
 	// step current physical world
