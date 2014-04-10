@@ -5,12 +5,12 @@
 * @brief Todo
 */
 
-#ifndef TITLE_PREFIX
-#define TITLE_PREFIX "Engine - "
+#ifndef DEFAULT_TIMESTEP_MS
+#define DEFAULT_TIMESTEP_MS 10
 #endif
 
-#ifndef DEFAULT_TIMESTEP
-#define DEFAULT_TIMESTEP 10
+#ifndef DEFAULT_WIN_TITLE
+#define DEFAULT_WIN_TITLE "Engine - "
 #endif
 
 #ifndef DEFAULT_WIN_W

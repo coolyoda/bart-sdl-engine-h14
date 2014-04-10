@@ -48,7 +48,8 @@ class Engine
 
 	public:
 		void SetWindowTitle(const char* title) {
-			SDL_SetWindowTitle(window, (StringConcat() << TITLE_PREFIX << title).c_str());
+			SDL_SetWindowTitle(window, (StringConcat() <<
+				DEFAULT_WIN_TITLE << title).c_str());
 		}
 
 		void SetWindowSize(int w, int h) {

@@ -14,7 +14,7 @@ Engine:: Engine(): isInitialized(false)
 	window = SDL_CreateWindow
 	(
 		// window title
-		  TITLE_PREFIX
+		DEFAULT_WIN_TITLE
 
 		// window position (x,y)
 		, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED
@@ -85,7 +85,7 @@ void Engine::Run()
 			delete event;
 		}
 
-		if (clock.Ticks() > DEFAULT_TIMESTEP)
+		if (clock.Ticks() > DEFAULT_TIMESTEP_MS)
 		{
 			// fixed timestep
 			clock.Restart();
