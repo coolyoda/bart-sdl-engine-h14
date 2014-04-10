@@ -2,13 +2,19 @@
 
 Game::Game()
 {
-	texFireFox = new SDLSprite("firefox.png", 0, 0, 100, 100);
-	texFireFox->CreateCollider(SDLCollider::SQUARE_COLLIDER, 1.f);
+	image = new Sprite("firefox.png", 0, 0);
+	image->CreateCollider(Collider::SQUARE_COLLIDER, 1.0f);
+	image->SetW(100);
+	image->SetH(100);
 }
 
 Game::~Game()
 {
-	delete texFireFox;
+	if (image)
+	{
+		delete image;
+		image = NULL;
+	}
 }
 
 void Game::Notify(const InputEvent& event)

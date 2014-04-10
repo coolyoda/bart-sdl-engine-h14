@@ -43,10 +43,10 @@
     <LibraryPath>C:\Developments\Projects\bart-sdl-engine-h14\dependencies\SDL2_image-2.0.0\lib\x86;C:\Developments\Projects\bart-sdl-engine-h14\dependencies\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\HiredK\Projects\VisualStudio\sdl-engine-h14\dependencies\SDL2-2.0.1\include;C:\Users\HiredK\Projects\VisualStudio\sdl-engine-h14\dependencies\SDL2_image-2.0.0\include;C:\Users\HiredK\Projects\VisualStudio\sdl-engine-h14\dependencies\Box2D\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\dependencies\SDL2-2.0.1\include;..\..\..\dependencies\SDL2_image-2.0.0\include;..\..\..\dependencies\Box2D\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>C:\Users\HiredK\Projects\VisualStudio\sdl-engine-h14\dependencies\SDL2-2.0.1\lib\x86;C:\Users\HiredK\Projects\VisualStudio\sdl-engine-h14\dependencies\SDL2_image-2.0.0\lib\x86;C:\Users\HiredK\Projects\VisualStudio\sdl-engine-h14\dependencies\Box2D\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\..\dependencies\SDL2-2.0.1\lib\x86;..\..\..\dependencies\SDL2_image-2.0.0\lib\x86;..\..\..\dependencies\Box2D\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -74,25 +74,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SDLCollider.cpp" />
-    <ClCompile Include="SDLComponent.cpp" />
-    <ClCompile Include="SDLEngine.cpp" />
+    <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="InputEvent.cpp" />
-    <ClCompile Include="SDLPhysics.cpp" />
-    <ClCompile Include="SDLRenderer.cpp" />
-    <ClCompile Include="SDLResources.cpp" />
-    <ClCompile Include="SDLSprite.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Resources.cpp" />
+    <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SDLCollider.h" />
-    <ClInclude Include="SDLComponent.h" />
-    <ClInclude Include="SDLEngine.h" />
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="InputEvent.h" />
-    <ClInclude Include="SDLPhysics.h" />
-    <ClInclude Include="SDLRenderer.h" />
-    <ClInclude Include="SDLResources.h" />
-    <ClInclude Include="SDLSprite.h" />
+    <ClInclude Include="Physics.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Resources.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StringConcat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

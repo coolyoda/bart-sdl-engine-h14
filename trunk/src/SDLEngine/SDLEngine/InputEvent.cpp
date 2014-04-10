@@ -244,7 +244,7 @@ void InputEvent::set_key_repeat(bool repeat) {
 bool InputEvent::is_shift_down() {
 
   SDL_Keymod mod = SDL_GetModState();
-  return mod & KMOD_SHIFT;
+  return (mod & KMOD_SHIFT) ? 1 : 0;
 }
 
 /**
@@ -257,7 +257,7 @@ bool InputEvent::is_shift_down() {
 bool InputEvent::is_control_down() {
 
   SDL_Keymod mod = SDL_GetModState();
-  return mod & KMOD_CTRL;
+  return (mod & KMOD_CTRL) ? 1 : 0;
 }
 
 /**
@@ -270,7 +270,7 @@ bool InputEvent::is_control_down() {
 bool InputEvent::is_alt_down() {
 
   SDL_Keymod mod = SDL_GetModState();
-  return mod & KMOD_ALT;
+  return (mod & KMOD_ALT) ? 1 : 0;
 }
 
 /**
@@ -280,7 +280,7 @@ bool InputEvent::is_alt_down() {
 bool InputEvent::is_caps_lock_on() {
 
   SDL_Keymod mod = SDL_GetModState();
-  return mod & KMOD_CAPS;
+  return (mod & KMOD_CAPS) ? 1 : 0;
 }
 
 /**
@@ -290,7 +290,7 @@ bool InputEvent::is_caps_lock_on() {
 bool InputEvent::is_num_lock_on() {
 
   SDL_Keymod mod = SDL_GetModState();
-  return mod & KMOD_NUM;
+  return (mod & KMOD_NUM) ? 1 : 0;
 }
 
 /**
@@ -303,7 +303,7 @@ bool InputEvent::is_key_down(KeyboardKey key) {
   int num_keys = 0;
   const Uint8* keys_state = SDL_GetKeyboardState(&num_keys);
   SDL_Scancode scan_code = SDL_GetScancodeFromKey(SDL_Keycode(key));
-  return keys_state[scan_code];
+  return (keys_state[scan_code]) ? 1 : 0;
 }
 
 /**

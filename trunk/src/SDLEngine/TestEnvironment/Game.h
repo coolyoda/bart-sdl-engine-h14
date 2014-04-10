@@ -1,19 +1,25 @@
 #pragma once
-#include <iostream>
-#include "InputEvent.h"
-#include "SDLSprite.h"
 
-class Game :
-	public SDLComponent
+/**
+* @file Game.h
+* @brief Todo
+*/
+
+#include "Common.h"
+
+// Engine includes
+#include "Engine.h"
+#include "Sprite.h"
+
+class Game: public Component
 {
-public:
-	Game();
-	~Game();
+	public:
+		 Game();
+		~Game();
+		
+		void Notify(const InputEvent& event);
+		void Update();
 
-	void Notify(const InputEvent& event);
-	void Update();
-
-private:
-	SDLSprite* texFireFox;
+	private:
+		Sprite* image;
 };
-
