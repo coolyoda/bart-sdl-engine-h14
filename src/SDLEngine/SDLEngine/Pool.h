@@ -1,7 +1,7 @@
 #pragma once
 
 /*
-MODE D'EMPLOI
+	MODE D'EMPLOI
 
 	//construct pool
 	myPool = new Pool<MyType>(10);
@@ -10,7 +10,6 @@ MODE D'EMPLOI
 	
 	//put object back in pool
 	myPool->FreeInstance(i);
-
 */
 
 template<class T> 
