@@ -91,6 +91,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="InputEvent.h" />
     <ClInclude Include="Physics.h" />
+    <ClInclude Include="Pool.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Sprite.h" />

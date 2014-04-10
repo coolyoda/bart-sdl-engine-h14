@@ -31,6 +31,7 @@
 // UTL includes
 #include "StringConcat.h"
 #include "Timer.h"
+#include "Pool.h"
 
 // SDL includes
 #include "SDL.h"

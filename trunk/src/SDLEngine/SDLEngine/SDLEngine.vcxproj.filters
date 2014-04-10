@@ -95,5 +95,8 @@
     <ClInclude Include="Timer.h">
       <Filter>Fichiers d%27en-tête\Components\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Pool.h">
+      <Filter>Fichiers d%27en-tête\Components\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
