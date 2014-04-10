@@ -1,25 +1,25 @@
-#include "SDLPhysics.h"
+#include "Physics.h"
 
-SDLPhysics* SDLPhysics::instance = nullptr;
+Physics* Physics::instance = NULL;
 
-SDLPhysics:: SDLPhysics(): world(b2Vec2(0.0f, 9.8f))
+Physics:: Physics() : world(b2Vec2(0.0f, 9.8f))
 {
 }
 
-SDLPhysics::~SDLPhysics()
+Physics::~Physics()
 {
 	bodies.clear();
 }
 
-b2Body* SDLPhysics::CreateBody(int x, int y, b2BodyType type)
+b2Body* Physics::CreateBody(int x, int y, b2BodyType type)
 {
 	b2BodyDef def;
 
-	// assign def position
-	def.position.x = x;
-	def.position.y = y;
+	// assign body def position
+	def.position.x = (float) x;
+	def.position.y = (float) y;
 
-	// assign def type
+	// assign body def type
 	def.type = type;
 
 	// call the body factory witch allocates memory for the
@@ -27,7 +27,7 @@ b2Body* SDLPhysics::CreateBody(int x, int y, b2BodyType type)
 	return world.CreateBody(&def);
 }
 
-void SDLPhysics::DestroyBody(b2Body* body)
+void Physics::DestroyBody(b2Body* body)
 {
 	std::vector<b2Body*>::iterator it=bodies.begin();
 	while(it!=bodies.end())

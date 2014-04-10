@@ -13,66 +13,81 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Fichiers sources\Physics">
-      <UniqueIdentifier>{60070af0-aa60-4456-89f2-4413b68d343b}</UniqueIdentifier>
+    <Filter Include="Fichiers d%27en-tête\Components">
+      <UniqueIdentifier>{1de1aee7-aca5-41ba-a196-f98f89fd5c6b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Physics">
+    <Filter Include="Fichiers d%27en-tête\Components\Physics">
       <UniqueIdentifier>{6b6f40c7-f15f-4da5-8059-67a4aefe9197}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Components">
+      <UniqueIdentifier>{d25bacd0-bfef-4b58-bfda-32adbb3282f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Components\Physics">
+      <UniqueIdentifier>{60070af0-aa60-4456-89f2-4413b68d343b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Components\Utility">
+      <UniqueIdentifier>{4c2c2b1a-30dd-4dda-85da-0781a1d2a7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Components\Utility">
+      <UniqueIdentifier>{257f7f7a-076a-468b-8d20-5b3cee31cf42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Fichiers sources\Components\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="SDLEngine.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLComponent.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLSprite.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLRenderer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLResources.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Physics.cpp">
+      <Filter>Fichiers sources\Components\Physics</Filter>
     </ClCompile>
     <ClCompile Include="InputEvent.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLPhysics.cpp">
-      <Filter>Fichiers sources\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLCollider.cpp">
-      <Filter>Fichiers sources\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SDLEngine.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Collider.h">
+      <Filter>Fichiers d%27en-tête\Components\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="SDLComponent.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SDLSprite.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SDLRenderer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SDLResources.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Physics.h">
+      <Filter>Fichiers d%27en-tête\Components\Physics</Filter>
     </ClInclude>
     <ClInclude Include="InputEvent.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="SDLPhysics.h">
-      <Filter>Fichiers d%27en-tête\Physics</Filter>
+    <ClInclude Include="Engine.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="SDLCollider.h">
-      <Filter>Fichiers d%27en-tête\Physics</Filter>
+    <ClInclude Include="StringConcat.h">
+      <Filter>Fichiers d%27en-tête\Components\Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
