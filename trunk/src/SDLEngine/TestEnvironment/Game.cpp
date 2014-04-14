@@ -1,20 +1,42 @@
 #include "Game.h"
 
-Game::Game()
+Test:: Test(const std::string& path, int x, int y, float mass): Sprite(path, x, y) {
+	CreateCollider(Collider::SQUARE_COLLIDER, mass);
+}
+
+Test::~Test()
 {
-	// create a physical sprite
-	image = new Sprite("firefox.png", 0, 0);
-	image->CreateCollider(Collider::SQUARE_COLLIDER, 1.0f);
-	image->SetW(100);
-	image->SetH(100);
+}
+
+void Test::OnCollisionEnter(b2Body* collider)
+{
+	std::cout << "COLLIDING ENTER" << std::endl;
+}
+
+void Test::OnCollisionLeave(b2Body* collider)
+{
+	std::cout << "COLLIDING LEAVE" << std::endl;
+}
+
+Game:: Game()
+{
+	// Create two sprites for testing purpose.
+	test1 = new Test("firefox.png", 100, 100, 1.f);
+	test2 = new Test("firefox.png", 200, 400, 0.f);
 }
 
 Game::~Game()
 {
-	if (image)
+	if (test1)
 	{
-		delete image;
-		image = NULL;
+		delete test1;
+		test1 = NULL;
+	}
+
+	if (test2)
+	{
+		delete test2;
+		test2 = NULL;
 	}
 }
 

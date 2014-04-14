@@ -9,6 +9,23 @@ Collider::~Collider()
 	DeleteCollider();
 }
 
+void Collider::Update(unsigned int t)
+{
+	if (body != nullptr)
+	{
+		rect.x = (int)body->GetPosition().x;
+		rect.y = (int)body->GetPosition().y;
+	}
+}
+
+void Collider::Draw()
+{
+}
+
+void Collider::Stop()
+{
+}
+
 void Collider::CreateCollider(ColliderType type, float mass)
 {
 	DeleteCollider();
@@ -20,7 +37,14 @@ void Collider::CreateCollider(ColliderType type, float mass)
 	{
 		case SQUARE_COLLIDER:
 		{
-			polygonShape.SetAsBox(rect.w, rect.h);
+			b2PolygonShape s;
+			s.SetAsBox
+			(
+				float(rect.w * 0.5f),
+				float(rect.h * 0.5f)
+			);
+
+			body->CreateFixture(&s, 1.f);
 		} break;
 
 		case SPHERE_COLLIDER:
@@ -31,6 +55,8 @@ void Collider::CreateCollider(ColliderType type, float mass)
 		{
 		} break;
 	}
+
+	body->SetUserData(this);
 }
 
 void Collider::DeleteCollider()

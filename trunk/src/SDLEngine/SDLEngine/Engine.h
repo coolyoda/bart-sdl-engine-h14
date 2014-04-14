@@ -11,8 +11,8 @@
 #include "InputEvent.h"
 #include "Component.h"
 #include "Resources.h"
+#include "Collider.h"
 #include "Renderer.h"
-#include "Physics.h"
 
 class Engine
 {

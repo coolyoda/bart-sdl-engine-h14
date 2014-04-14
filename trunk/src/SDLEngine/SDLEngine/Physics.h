@@ -7,9 +7,6 @@
 
 #include "Common.h"
 
-// Box2D includes
-#include "Box2D/Box2D.h"
-
 class Physics
 {
 	public:
@@ -43,6 +40,10 @@ class Physics
 		#pragma endregion
 
 	public:
+		void SetContactListener(b2ContactListener* listener) {
+			world.SetContactListener(listener);
+		}
+
 		void Step(float step = 1.0f/60.0f, int vit = 6, int pit = 2)
 		{
 			world.Step(step, vit, pit);

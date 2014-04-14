@@ -111,16 +111,13 @@ void Sprite::Start()
 
 void Sprite::Update(unsigned int t)
 {
-	if (body != nullptr)
-	{
-		rect.x = (int) body->GetPosition().x;
-		rect.y = (int) body->GetPosition().y;
-	}
+	Collider::Update(t);
 }
 
 void Sprite::Draw()
 {
 	ApplySurface(tex, Engine::GetInstance()->GetRenderer());
+	Collider::Draw();
 }
 
 void Sprite::ApplySurface(SDL_Texture* texture, SDL_Renderer* renderer)
@@ -130,4 +127,5 @@ void Sprite::ApplySurface(SDL_Texture* texture, SDL_Renderer* renderer)
 
 void Sprite::Stop()
 {
+	Collider::Stop();
 }
