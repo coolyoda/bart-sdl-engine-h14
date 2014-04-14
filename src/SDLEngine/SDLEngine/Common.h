@@ -40,3 +40,6 @@
 
 // Box2D includes
 #include "Box2D/Box2D.h"
+
+// GLM include
+#include "glm.hpp"
