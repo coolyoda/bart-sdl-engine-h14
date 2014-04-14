@@ -26,6 +26,11 @@ Engine:: Engine(): isInitialized(false)
 		, SDL_WINDOW_SHOWN
 	);
 
+	// Initialize physics.
+	Physics::GetInstance()->SetContactListener(
+		new Collider::CollisionListener()
+	);
+
 	// Initialize video.
 	renderer = new Renderer(window);
 
