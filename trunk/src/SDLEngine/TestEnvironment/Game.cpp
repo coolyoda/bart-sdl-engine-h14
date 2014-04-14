@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Test:: Test(const std::string& path, int x, int y, float mass): Sprite(path, x, y) {
-	CreateCollider(Collider::SQUARE_COLLIDER, mass);
+	CreateCollider(Collider::SPHERE_COLLIDER, mass);
 }
 
 Test::~Test()
