@@ -13,8 +13,8 @@ void Collider::Update(unsigned int t)
 {
 	if (body != nullptr)
 	{
-		rect.x = (int)body->GetPosition().x;
-		rect.y = (int)body->GetPosition().y;
+		rect.x = (int) body->GetPosition().x;
+		rect.y = (int) body->GetPosition().y;
 	}
 }
 
@@ -49,6 +49,12 @@ void Collider::CreateCollider(ColliderType type, float mass)
 
 		case SPHERE_COLLIDER:
 		{
+			b2CircleShape s;
+			s.m_radius = (rect.w > rect.h)
+				? float(rect.w * 0.5f)
+				: float(rect.h * 0.5f);
+
+			body->CreateFixture(&s, 1.f);
 		} break;
 
 		default:
