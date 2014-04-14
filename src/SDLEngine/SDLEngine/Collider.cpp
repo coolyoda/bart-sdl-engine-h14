@@ -20,6 +20,7 @@ void Collider::CreateCollider(ColliderType type, float mass)
 	{
 		case SQUARE_COLLIDER:
 		{
+			polygonShape.SetAsBox(rect.w, rect.h);
 		} break;
 
 		case SPHERE_COLLIDER:

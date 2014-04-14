@@ -29,4 +29,5 @@ class Collider: public Component
 
 	protected:
 		b2Body* body;
+		b2PolygonShape polygonShape;
 };
