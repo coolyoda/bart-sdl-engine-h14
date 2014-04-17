@@ -14,12 +14,18 @@
 class Test: public Sprite
 {
 	public:
-		 Test(const std::string& path, int x, int y, float mass);
+		enum TestCategories
+		{
+			TEST1_CATEGORY = 0x0001,
+			TEST2_CATEGORY = 0x0002
+		};
+
+		 Test(const std::string& path, int x, int y);
 		~Test();
 
 	protected:
-		void OnCollisionEnter(b2Body* collider);
-		void OnCollisionLeave(b2Body* collider);
+		void OnCollisionEnter(b2Fixture* fixture);
+		void OnCollisionLeave(b2Fixture* fixture);
 };
 
 class Game: public Component
