@@ -31,6 +31,10 @@ class Collider: public Component
 		void CreateCollider(ColliderType type, float mass = 0.f);
 		void DeleteCollider();
 
+		b2Body* GetBody() const {
+			return body;
+		}
+
 		// custom collider contact listener
 		class CollisionListener: public b2ContactListener
 		{
@@ -40,7 +44,7 @@ class Collider: public Component
 				{
 					// check fixtureA collision
 					static_cast<Collider*>(ud)->OnCollisionEnter(
-						contact->GetFixtureB()->GetBody()
+						contact->GetFixtureB()
 					);
 				}
 
@@ -49,7 +53,7 @@ class Collider: public Component
 				{
 					// check fixtureB collision
 					static_cast<Collider*>(ud)->OnCollisionEnter(
-						contact->GetFixtureA()->GetBody()
+						contact->GetFixtureA()
 					);
 				}
 			}
@@ -60,7 +64,7 @@ class Collider: public Component
 				{
 					// check fixtureA collision
 					static_cast<Collider*>(ud)->OnCollisionLeave(
-						contact->GetFixtureB()->GetBody()
+						contact->GetFixtureB()
 					);
 				}
 
@@ -69,14 +73,14 @@ class Collider: public Component
 				{
 					// check fixtureB collision
 					static_cast<Collider*>(ud)->OnCollisionLeave(
-						contact->GetFixtureA()->GetBody()
+						contact->GetFixtureA()
 					);
 				}
 			}
 		};
 
 	protected:
-		virtual void OnCollisionEnter(b2Body* collider) {}
-		virtual void OnCollisionLeave(b2Body* collider) {}
+		virtual void OnCollisionEnter(b2Fixture* fixture) {}
+		virtual void OnCollisionLeave(b2Fixture* fixture) {}
 		b2Body* body;
 };
