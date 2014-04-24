@@ -6,11 +6,11 @@ Sprite::Sprite()
 {
 }
 
-Sprite::Sprite(std::string fileName)
+Sprite:: Sprite(const std::string& path)
 	: Collider()
 	, tex(NULL)
 {
-	tex = Resources::GetInstance()->GetTexture(fileName);
+	tex = Resources::GetInstance()->GetTexture(path);
 
 	SDL_Rect rect;
 	rect.x = 0;
@@ -20,11 +20,11 @@ Sprite::Sprite(std::string fileName)
 	SetRect(rect);
 }
 
-Sprite::Sprite(std::string fileName, int x, int y)
+Sprite:: Sprite(const std::string& path, int x, int y)
 	: Collider()
 	, tex(NULL)
 {
-	tex = Resources::GetInstance()->GetTexture(fileName);
+	tex = Resources::GetInstance()->GetTexture(path);
 
 	SDL_Rect rect;
 	rect.x = x;
@@ -34,11 +34,11 @@ Sprite::Sprite(std::string fileName, int x, int y)
 	SetRect(rect);
 }
 
-Sprite::Sprite(std::string fileName, int x, int y, int w, int h)
+Sprite:: Sprite(const std::string& path, int x, int y, int w, int h)
 	: Collider()
 	, tex(NULL)
 {
-	tex = Resources::GetInstance()->GetTexture(fileName);
+	tex = Resources::GetInstance()->GetTexture(path);
 
 	SDL_Rect rect;
 	rect.x = x;
@@ -49,11 +49,11 @@ Sprite::Sprite(std::string fileName, int x, int y, int w, int h)
 	SetRect(rect);
 }
 
-Sprite::Sprite(std::string fileName, const SDL_Rect& rect)
+Sprite:: Sprite(const std::string& path, const SDL_Rect& rect)
 	: Collider()
 	, tex(NULL)
 {
-	tex = Resources::GetInstance()->GetTexture(fileName);
+	tex = Resources::GetInstance()->GetTexture(path);
 	SetRect(rect);
 }
 

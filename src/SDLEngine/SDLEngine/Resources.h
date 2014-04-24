@@ -43,9 +43,13 @@ class Resources
 		#pragma endregion
 
 	public:
-		SDL_Texture* GetTexture(std::string path);
+		SDL_Texture* GetTexture(const std::string& path);
+		TTF_Font* GetFont(const std::string& path, int size);
 
 	private:
-		SDL_Texture* LoadImage(std::string path, SDL_Renderer* renderer);
+		SDL_Texture* LoadImage(const std::string& path, SDL_Renderer* renderer);
 		std::map<std::string, SDL_Texture*> loadedTextures;
+
+		TTF_Font* LoadFont(const std::string& path, int size, SDL_Renderer* renderer);
+		std::map<std::string, TTF_Font*> loadedFonts;
 };

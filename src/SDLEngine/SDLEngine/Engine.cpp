@@ -14,7 +14,7 @@ Engine:: Engine(): isInitialized(false)
 	window = SDL_CreateWindow
 	(
 		// window title
-		DEFAULT_WIN_TITLE
+		  DEFAULT_WIN_TITLE
 
 		// window position (x,y)
 		, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED
@@ -25,6 +25,11 @@ Engine:: Engine(): isInitialized(false)
 		// creation flags
 		, SDL_WINDOW_SHOWN
 	);
+
+	// Initialize text rendering.
+	if (TTF_Init() == -1){
+		std::cout << TTF_GetError() << std::endl;
+	}
 
 	// Initialize physics.
 	Physics::GetInstance()->SetContactListener(

@@ -10,6 +10,7 @@
 // Engine includes
 #include "Engine.h"
 #include "Sprite.h"
+#include "Text.h"
 
 class Test: public Sprite
 {
@@ -40,4 +41,7 @@ class Game: public Component
 	private:
 		Test* test1;
 		Test* test2;
+
+		Text* test3;
+		Text* test4;
 };

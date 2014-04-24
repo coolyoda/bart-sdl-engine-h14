@@ -43,10 +43,10 @@
     <LibraryPath>..\..\..\dependencies\SDL2-2.0.1\lib\x86;..\..\..\dependencies\SDL2_image-2.0.0\lib\x86;..\..\..\dependencies\Box2D\lib;..\..\..\dependencies\SDL2_mixer-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\..\..\dependencies\SDL2-2.0.1\include;..\..\..\dependencies\SDL2_image-2.0.0\include;..\..\..\dependencies\SDL2_mixer-2.0.0\include;..\..\..\dependencies\Box2D\include;..\..\..\dependencies\glm\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\dependencies\SDL2-2.0.1\include;..\..\..\dependencies\SDL2_image-2.0.0\include;..\..\..\dependencies\SDL2_mixer-2.0.0\include;..\..\..\dependencies\SDL2_ttf-2.0.12\include;..\..\..\dependencies\Box2D\include;..\..\..\dependencies\glm\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>..\..\..\dependencies\SDL2-2.0.1\lib\x86;..\..\..\dependencies\SDL2_image-2.0.0\lib\x86;..\..\..\dependencies\SDL2_mixer-2.0.0\lib\x86;..\..\..\dependencies\Box2D\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\..\dependencies\SDL2-2.0.1\lib\x86;..\..\..\dependencies\SDL2_image-2.0.0\lib\x86;..\..\..\dependencies\SDL2_mixer-2.0.0\lib\x86;..\..\..\dependencies\SDL2_ttf-2.0.12\lib\x86;..\..\..\dependencies\Box2D\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -82,6 +82,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +97,7 @@
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="StringConcat.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
