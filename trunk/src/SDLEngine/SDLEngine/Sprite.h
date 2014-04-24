@@ -15,10 +15,10 @@ class Sprite: public Collider
 {
 	public:
 		Sprite();
-		Sprite(std::string fileName);
-		Sprite(std::string fileName, int x, int y);
-		Sprite(std::string fileName, int x, int y, int w, int h);
-		Sprite(std::string fileName, const SDL_Rect& rect);
+		Sprite(const std::string& path);
+		Sprite(const std::string& path, int x, int y);
+		Sprite(const std::string& path, int x, int y, int w, int h);
+		Sprite(const std::string& path, const SDL_Rect& rect);
 
 		Sprite(SDL_Texture* tex);
 		Sprite(SDL_Texture* tex, int x, int y);
