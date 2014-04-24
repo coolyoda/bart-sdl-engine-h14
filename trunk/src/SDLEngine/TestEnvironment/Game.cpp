@@ -14,13 +14,11 @@ void Test::OnCollisionEnter(b2Fixture* fixture) {
 	{
 		switch (fixture->GetFilterData().categoryBits)
 		{
-			case TEST1_CATEGORY:
-			{
+			case TEST1_CATEGORY: {
 				std::cout << "TEST1_CATEGORY" << std::endl;
 			} break;
 
-			case TEST2_CATEGORY:
-			{
+			case TEST2_CATEGORY: {
 				std::cout << "TEST2_CATEGORY" << std::endl;
 			} break;
 
