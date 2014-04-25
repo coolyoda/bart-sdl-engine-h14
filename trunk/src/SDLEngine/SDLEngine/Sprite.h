@@ -32,7 +32,7 @@ class Sprite: public Collider
 		void Draw();
 		void Stop();
 
-	private:
+	protected:
 		void ApplySurface(SDL_Texture* texture, SDL_Renderer* renderer);
 		SDL_Texture* tex;
 };

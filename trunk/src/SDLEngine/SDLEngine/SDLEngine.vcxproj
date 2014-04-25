@@ -82,6 +82,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteAnimation.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
@@ -96,6 +97,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteAnimation.h" />
     <ClInclude Include="StringConcat.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Timer.h" />
