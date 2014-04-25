@@ -15,6 +15,7 @@ void Collider::Update(unsigned int t)
 	{
 		rect.x = (int) body->GetPosition().x;
 		rect.y = (int) body->GetPosition().y;
+		angle = glm::degrees(body->GetAngle());
 	}
 }
 

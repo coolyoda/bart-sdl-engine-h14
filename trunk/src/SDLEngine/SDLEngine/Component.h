@@ -72,4 +72,5 @@ class Component
 
 	protected:
 		SDL_Rect rect;
+		float angle;
 };
