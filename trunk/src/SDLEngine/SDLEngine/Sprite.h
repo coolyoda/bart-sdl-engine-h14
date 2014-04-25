@@ -27,6 +27,11 @@ class Sprite: public Collider
 		
 		virtual ~Sprite();
 
+		void SetTexture(const std::string& path)
+		{
+			tex = Resources::GetInstance()->GetTexture(path);
+		}
+
 		void Start();
 		void Update(unsigned int t);
 		void Draw();
