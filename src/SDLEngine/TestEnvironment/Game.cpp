@@ -67,6 +67,33 @@ Game::Game()
 		test3->SetText("A Quick Brown Fox Jumps Over The Lazy Dog 0123456789", 0, 255, 0);
 		std::cout << "Created 'test4' text" << std::endl;
 	}
+	{
+		// create text object 'test5'
+		test5 = new SpriteAnimation("fighter.png", 100, 100);
+
+		int offsetX = 0;
+		int offsetY = 2;
+		for (int i = 0; i < 4; i++)
+		{
+			SDL_Rect frame;
+			frame.x = offsetX;
+			frame.y = offsetY;
+			frame.w = 25;
+			frame.h = 45;
+
+			test5->AddAnimationFrame(SpriteAnimation::DOWN, frame);
+			frame.y += 48;
+
+			test5->AddAnimationFrame(SpriteAnimation::LEFT, frame);
+			frame.y += 48;
+
+			test5->AddAnimationFrame(SpriteAnimation::RIGHT, frame);
+			frame.y += 48;
+
+			test5->AddAnimationFrame(SpriteAnimation::UP, frame);
+			offsetX += 32;
+		}
+	}
 }
 
 Game::~Game()
@@ -99,6 +126,29 @@ void Game::Notify(const InputEvent& event)
 			std::cout << "Return Key Pressed" << std::endl;
 			return;
 		}
+
+		switch (event.get_keyboard_key())
+		{
+			case InputEvent::KEY_DOWN: {
+				test5->SetCurrentDirection(SpriteAnimation::DOWN);
+				test5->SetNumberOfFrame(4);
+			} break;
+
+			case InputEvent::KEY_LEFT: {
+				test5->SetCurrentDirection(SpriteAnimation::LEFT);
+				test5->SetNumberOfFrame(4);
+			} break;
+
+			case InputEvent::KEY_RIGHT: {
+				test5->SetCurrentDirection(SpriteAnimation::RIGHT);
+				test5->SetNumberOfFrame(4);
+			} break;
+
+			case InputEvent::KEY_UP: {
+				test5->SetCurrentDirection(SpriteAnimation::UP);
+				test5->SetNumberOfFrame(4);
+			} break;
+		}
 	}
 
 	// detect key released
@@ -109,6 +159,8 @@ void Game::Notify(const InputEvent& event)
 			std::cout << "Return Key Released" << std::endl;
 			return;
 		}
+
+		test5->SetNumberOfFrame(1);
 	}
 }
 
