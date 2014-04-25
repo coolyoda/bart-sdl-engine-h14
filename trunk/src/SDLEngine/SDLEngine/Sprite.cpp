@@ -116,8 +116,10 @@ void Sprite::Update(unsigned int t)
 
 void Sprite::Draw()
 {
-	ApplySurface(tex, Engine::GetInstance()->GetRenderer());
-	Collider::Draw();
+	if (tex && isVisible) {
+		ApplySurface(tex, Engine::GetInstance()->GetRenderer());
+		Collider::Draw();
+	}
 }
 
 void Sprite::ApplySurface(SDL_Texture* texture, SDL_Renderer* renderer)

@@ -67,10 +67,27 @@ class Component
 			this->rect = r;
 		}
 
+		// ANGLE ACCESSOR
+		float GetAngle() const { return angle; }
+		void SetAngle(float degree)
+		{
+			angle = degree;
+		}
+
+		// VISIBLE ACCESSOR
+		bool IsVisible() const { return isVisible; }
+		void Show() { SetVisible(1); }
+		void Hide() { SetVisible(0); }
+		void SetVisible(bool visible)
+		{
+			isVisible = visible;
+		}
+
 	private:
 		static std::vector<Component*> allComponents;
 
 	protected:
+		bool isVisible;
 		SDL_Rect rect;
 		float angle;
 };
