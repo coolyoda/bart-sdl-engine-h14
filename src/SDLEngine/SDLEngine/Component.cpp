@@ -10,6 +10,8 @@ Component::Component()
 	rect.y = 0;
 	rect.w = 0;
 	rect.h = 0;
+
+	angle = 0.0f;
 }
 
 Component::~Component()
