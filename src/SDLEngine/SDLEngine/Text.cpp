@@ -53,7 +53,7 @@ void Text::Update(unsigned int t)
 
 void Text::Draw()
 {
-	if (tex) {
+	if (tex && isVisible) {
 		ApplySurface(tex, Engine::GetInstance()->GetRenderer());
 	}
 }
