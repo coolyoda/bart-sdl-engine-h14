@@ -44,8 +44,14 @@ void SpriteAnimation::Draw()
 		SetW(src.w);
 		SetH(src.h);
 
+		SDL_Rect r;
+		r.x = rect.x * 2.0;
+		r.y = rect.y * 2.0;
+		r.w = rect.w * 2.0;
+		r.h = rect.h * 2.0;
+
 		SDL_RenderCopyEx(Engine::GetInstance()->GetRenderer(),
-			tex, &src, &rect, angle, 0, SDL_FLIP_NONE
+			tex, &src, &r, angle, 0, SDL_FLIP_NONE
 		);
 	}
 }
