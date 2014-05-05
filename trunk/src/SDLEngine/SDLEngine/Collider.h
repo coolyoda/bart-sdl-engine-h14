@@ -18,6 +18,7 @@ class Collider: public Component
 		{
 			SQUARE_COLLIDER = 0,
 			SPHERE_COLLIDER = 1,
+			PLAYER_COLLIDER = 2,
 			TYPE_NUM
 		};
 		
@@ -30,6 +31,17 @@ class Collider: public Component
 
 		void CreateCollider(ColliderType type, float mass = 0.f);
 		void DeleteCollider();
+
+		void SetRotationFixed()
+		{
+			if (body) {
+				b2MassData md;
+				body->GetMassData(&md);
+
+				md.I = 0.0f;
+				body->SetMassData(&md);
+			}
+		}
 
 		b2Body* GetBody() const {
 			return body;

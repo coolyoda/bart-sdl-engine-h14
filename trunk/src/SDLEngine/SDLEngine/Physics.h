@@ -50,6 +50,7 @@ class Physics
 			world.Step(step, vit, pit);
 			world.Step(step, vit, pit);
 			world.Step(step, vit, pit);
+			world.ClearForces();
 		}
 
 		b2Body* CreateBody(int x, int y, b2BodyType type);

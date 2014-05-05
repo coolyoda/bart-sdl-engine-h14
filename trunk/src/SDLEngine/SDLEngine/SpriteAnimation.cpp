@@ -13,8 +13,8 @@ void SpriteAnimation::AddAnimationFrame(Directions dir, const SDL_Rect& rect)
 {
 	SDL_Rect size;
 	SDL_QueryTexture(tex, 0, 0, &size.w, &size.h);
-	if (rect.x + rect.w < size.w &&
-		rect.y + rect.h < size.h)
+	if (rect.x + rect.w <= size.w &&
+		rect.y + rect.h <= size.h)
 	{
 		frames[dir].push_back(rect);
 	}
