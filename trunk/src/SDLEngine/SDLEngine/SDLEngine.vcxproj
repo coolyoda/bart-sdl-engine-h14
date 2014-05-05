@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\..\..\dependencies\SDL2-2.0.1\include;..\..\..\dependencies\SDL2_image-2.0.0\include;..\..\..\dependencies\Box2D\include;..\..\..\dependencies\SDL2_mixer-2.0.0\include;..\..\..\dependencies\glm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\..\dependencies\SDL2-2.0.1\lib\x86;..\..\..\dependencies\SDL2_image-2.0.0\lib\x86;..\..\..\dependencies\Box2D\lib;..\..\..\dependencies\SDL2_mixer-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\..\dependencies\SDL2-2.0.1\include;..\..\..\dependencies\SDL2_image-2.0.0\include;..\..\..\dependencies\Box2D\include;..\..\..\dependencies\SDL2_mixer-2.0.0\include;..\..\..\dependencies\SDL2_ttf-2.0.12\include;..\..\..\dependencies\glm\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\..\dependencies\SDL2-2.0.1\lib\x86;..\..\..\dependencies\SDL2_image-2.0.0\lib\x86;..\..\..\dependencies\Box2D\lib;..\..\..\dependencies\SDL2_mixer-2.0.0\lib\x86;..\..\..\dependencies\SDL_ttf-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>..\..\..\dependencies\SDL2-2.0.1\include;..\..\..\dependencies\SDL2_image-2.0.0\include;..\..\..\dependencies\SDL2_mixer-2.0.0\include;..\..\..\dependencies\SDL2_ttf-2.0.12\include;..\..\..\dependencies\Box2D\include;..\..\..\dependencies\glm\include;$(IncludePath)</IncludePath>
@@ -74,6 +74,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -87,6 +88,7 @@
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Component.h" />

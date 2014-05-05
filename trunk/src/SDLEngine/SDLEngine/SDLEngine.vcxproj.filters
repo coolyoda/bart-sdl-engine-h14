@@ -66,6 +66,9 @@
     <ClCompile Include="SpriteAnimation.cpp">
       <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collider.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="SpriteAnimation.h">
       <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

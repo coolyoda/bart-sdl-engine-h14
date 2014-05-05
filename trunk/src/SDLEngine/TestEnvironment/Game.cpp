@@ -94,6 +94,14 @@ Game::Game()
 			offsetX += 32;
 		}
 	}
+
+	{
+		//Load sfx and music
+		Audio::GetInstance()->PlaySound("test.wav", 100, 0.5, -1);
+		//Audio::GetInstance()->PlayMusic("testsong.mp3", 100);
+
+		Audio::GetInstance()->ChangeSFXVolume(50);
+	}
 }
 
 Game::~Game()
@@ -148,6 +156,10 @@ void Game::Notify(const InputEvent& event)
 				test5->SetCurrentDirection(SpriteAnimation::UP);
 				test5->SetNumberOfFrame(4);
 			} break;
+
+			case InputEvent::KEY_DELETE: {
+				Audio::GetInstance()->PlaySoundFocus("testfocus.wav");
+			} break;
 		}
 	}
 
@@ -157,6 +169,7 @@ void Game::Notify(const InputEvent& event)
 		// filter the released key code
 		if (event.get_keyboard_key() == InputEvent::KEY_RETURN) {
 			std::cout << "Return Key Released" << std::endl;
+
 			return;
 		}
 
