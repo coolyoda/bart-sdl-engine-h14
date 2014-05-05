@@ -124,7 +124,13 @@ void Sprite::Draw()
 
 void Sprite::ApplySurface(SDL_Texture* texture, SDL_Renderer* renderer)
 {
-	SDL_RenderCopyEx(renderer, texture, 0, &rect, angle, 0, SDL_FLIP_NONE);
+	SDL_Rect r;
+	r.x = rect.x * 2.0;
+	r.y = rect.y * 2.0;
+	r.w = rect.w * 2.0;
+	r.h = rect.h * 2.0;
+
+	SDL_RenderCopyEx(renderer, texture, 0, &r, angle, 0, SDL_FLIP_NONE);
 }
 
 void Sprite::Stop()
