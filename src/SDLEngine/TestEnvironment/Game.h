@@ -47,4 +47,6 @@ class Game: public Component
 		Text* test4;
 
 		SpriteAnimation* test5;
+
+		Music* mySong;
 };

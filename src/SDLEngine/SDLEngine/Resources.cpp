@@ -58,7 +58,7 @@ SDL_Texture* Resources::LoadImage(const std::string& path, SDL_Renderer* rendere
 	loadedImage = IMG_LoadTexture(renderer, path.c_str());
 	if (loadedImage == NULL)
 	{
-		std::cout << "Failed to load image '" + path + "' : " + IMG_GetError();
+		std::cout << "Failed to load image '" + path + "' : " + IMG_GetError() << std::endl;
 	}
 
 	return loadedImage;
